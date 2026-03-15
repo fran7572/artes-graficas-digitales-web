@@ -254,6 +254,7 @@ nav ul li a:hover { color: #87CEEB; }
 .img-papeleria { background-image: url('img/papeleria.jpg'); }
 .img-calendario { background-image: url('img/calendario.jpg'); }
 .img-serigrafia { background-image: url('img/serigrafia.jpg'); }
+
 /* =========================================
    FORMULARIO (PÁGINA COTIZACIÓN)
    ========================================= */
@@ -267,7 +268,7 @@ nav ul li a:hover { color: #87CEEB; }
 
 input, textarea {
     width: 100%; padding: 15px; margin-bottom: 20px;
-    border-radius: 8px; border: none; font-size: 1rem;
+    border-radius: 8px; border: none; font-size: 16px; /* 16px para evitar zoom automático en cel */
 }
 
 /* =========================================
@@ -294,12 +295,12 @@ input, textarea {
 }
 
 /* =========================================
-   FOOTER COMPACTO (A LA PAR Y BAJO)
+   FOOTER COMPACTO
    ========================================= */
 footer {
     background: #002b5c;
     color: #fff;
-    padding: 25px 20px 15px; /* Altura reducida */
+    padding: 25px 20px 15px; 
     margin-top: 30px;
 }
 
@@ -314,9 +315,7 @@ footer {
     padding-bottom: 15px;
 }
 
-.footer-column {
-    flex: 1;
-}
+.footer-column { flex: 1; }
 
 .footer-column h4 {
     color: #87CEEB;
@@ -334,11 +333,7 @@ footer {
     letter-spacing: 1px;
 }
 
-.footer-column p {
-    font-size: 0.85rem;
-    margin-bottom: 4px;
-    opacity: 0.8;
-}
+.footer-column p { font-size: 0.85rem; margin-bottom: 4px; opacity: 0.8; }
 
 .footer-bottom {
     text-align: center;
@@ -349,14 +344,28 @@ footer {
 }
 
 /* =========================================
-   RESPONSIVO
+   RESPONSIVO (AJUSTES PARA CELULAR)
    ========================================= */
 @media (max-width: 768px) {
-    .hero-logo-main { max-width: 320px; }
+    /* Mejoramos el menú móvil */
+    nav ul li a {
+        font-size: 1.1rem; /* Más grande para legibilidad */
+        padding: 10px 8px;
+        font-weight: 700;
+    }
+
+    .logo-img { height: 40px; }
+
+    /* Hero y Títulos */
+    .hero-logo-main { max-width: 280px; }
+    .container h2 { font-size: 2.2rem; }
+
+    /* Secciones y Misión */
     .mv-grid { grid-template-columns: 1fr; gap: 30px; }
     .servicio-card { flex-direction: column; height: auto; }
-    .servicio-img { width: 100%; height: 220px; }
-    .servicio-texto { text-align: center; padding: 30px; }
+    .servicio-img { width: 100%; height: 200px; }
+    .servicio-texto { text-align: center; padding: 25px; }
+    
     .emoji-separador { display: none; }
     
     footer { padding: 20px 15px; }
@@ -365,4 +374,7 @@ footer {
         text-align: center;
         gap: 15px;
     }
+
+    .container { padding: 40px 15px; }
+    .form-box { padding: 25px; }
 }
